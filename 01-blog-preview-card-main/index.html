@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Blog preview card</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,600;0,800;1,600&display=swap");
+
+      :root {
+        --primary-color: #f4d04e;
+        --card-bg-color: #ffffff;
+        --para-color-1: #808080;
+        --heading-color: #121212;
+        --text-color: #121212;
+        --shadow-color: #121212;
+      }
+
+      html {
+        /* This makes 1rem = 10px. I am going to use rem in this page. */
+        font-size: 62.5%;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Figtree", sans-serif;
+        line-height: 1.6;
+      }
+
+      p {
+        font-size: 1.6rem;
+        color: var(--para-color-1);
+        margin: 1rem 0;
+      }
+
+      img {
+        /* Images won't be selected */
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera, and Edge */
+        width: 100%;
+      }
+
+      /* Takes up entire screen, and its children are centered. */
+      .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color);
+      }
+
+      .blog-preview-card {
+        max-width: 450px;
+        background-color: var(--card-bg-color);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0.6rem 1rem 0.3rem 1rem var(--shadow-color);
+      }
+
+      .blog-preview-card a {
+        text-decoration: none;
+        color: var(--heading-color);
+      }
+
+      .blog-preview-card h1 {
+        font-size: 3rem;
+      }
+
+      .blog-preview-card h1:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+
+      .blog-preview-card .tag {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 0.2rem 1rem;
+        border-radius: 0.3rem;
+        color: var(--text-color);
+        background-color: var(--primary-color);
+        margin: 1rem 0;
+      }
+
+      .blog-preview-card .published-date {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+      }
+
+      .blog-preview-card .desc {
+        color: var(--para-color-1);
+        font-size: 1.8rem;
+      }
+
+      .blog-preview-card .author-details {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
+      .blog-preview-card .author-details img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      .blog-preview-card .author-details p {
+        font-size: 1.6rem;
+        color: var(--text-color);
+      }
+
+      .attribution {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      /* Smaller screens */
+      @media (max-width: 345px) {
+        .blog-preview-card {
+          max-width: 90%;
+        }
+
+        .blog-preview-card h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      /* Attribution */
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      .illustration {
+        border-radius: 8px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="blog-preview-card">
+          <img
+            src="./assets/images/illustration-article.svg"
+            alt=""
+            class="illustration"
+          />
+
+          <div class="tag">Learning</div>
+          <p class="published-date">Published 21 Dec 2023</p>
+
+          <a href="#"><h1>HTML & CSS foundations</h1></a>
+
+          <p class="desc">
+            These languages are the backbone of every website, defining
+            structure, content, and presentation.
+          </p>
+          <div class="author-details">
+            <div>
+              <img src="./assets/images/image-avatar.webp" alt="" />
+            </div>
+            <p>Greg Hooper</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Frontend Mentor</a
+      >. Coded by <a href="#">Ravi</a>.
+    </div>
+  </body>
+</html>
