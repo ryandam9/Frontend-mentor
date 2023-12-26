@@ -38,11 +38,6 @@ body {
   background-color: var(--container-bg-color);
 }
 
-/* .lead {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-} */
-
 .heading-xl {
   font-family: "Space Grotesk", sans-serif;
   font-size: 7.8rem;
@@ -144,14 +139,8 @@ img {
   z-index: 2;
 }
 
-.social-icons img {
-  display: block;
-  filter: red(100%);
-  transition: filter 0.3s;
-}
-
-.social-icons img:hover {
-  filter: none;
+.icon:hover svg path {
+  fill: var(--green-1);
 }
 
 /* ------------------------- */
@@ -169,7 +158,8 @@ img {
   width: 500px;
   height: 120px;
   top: 10px;
-  left: -250px;
+  left: -50px;
+  overflow: hidden;
 }
 
 .header-contents-a {
@@ -216,9 +206,13 @@ img {
   border-bottom: 2px solid var(--green-1);
 }
 
+.header-contents .contact-me:hover {
+  color: var(--green-1);
+  cursor: pointer;
+}
+
 .separator {
   margin-top: 8rem;
-  margin-bottom: 4rem;
   height: 0.1rem;
   background-color: var(--gray-1);
 }
@@ -246,11 +240,15 @@ img {
 
 .skill-set-container .rings {
   position: absolute;
-  width: 400px;
+  top: 250px;
+  right: 0px;
+  max-width: 400px;
   height: 120px;
-  top: 220px;
-  right: -350px;
   z-index: 10;
+}
+
+.skill-set-container .rings img {
+  overflow: hidden;
 }
 
 /* ------------------------- */
@@ -308,7 +306,6 @@ img {
   padding-top: 10rem;
   padding-left: 135px;
   padding-right: 135px;
-  /* padding-bottom: 10rem; */
   background-color: var(--black-2);
   position: relative;
 }
@@ -332,10 +329,11 @@ img {
 
 .contact-container .rings {
   position: absolute;
-  width: 600px;
+  width: 400px;
   height: 120px;
-  top: 320px;
-  left: -250px;
+  top: 520px;
+  left: 0px;
+  overflow: hidden;
 }
 
 /* Contact form */
@@ -343,7 +341,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   max-width: 500px;
   position: relative;
 }
@@ -356,25 +354,49 @@ img {
 .contact-container .contact-b input,
 .contact-container .contact-b textarea {
   width: 100%;
-  height: 5rem;
-  margin-bottom: 2rem;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   font-size: 1.6rem;
   color: var(--text-gray-color);
   background-color: transparent;
   outline: none;
   border: none;
+  border-bottom: 2px solid var(--text-gray-color);
   font-family: "Space Grotesk", sans-serif;
 }
 
+/* If class contains error */
+.contact-container .contact-b input.error {
+  border-bottom: 2px solid red;
+  background-color: transparent;
+}
+
+.contact-container .contact-b input:focus {
+  border-bottom: 2px solid var(--green-1);
+  background-color: transparent;
+}
+
+.contact-container .contact-b input.valid {
+  border-bottom: 2px solid var(--green-1);
+  background-color: transparent;
+}
+
+/* TextArea relatd */
 .contact-container .contact-b textarea {
   height: 10rem;
   resize: none;
 }
 
-.contact-container .contact-b input,
-.contact-container .contact-b textarea {
-  border-bottom: 1px solid var(--text-gray-color);
+.contact-container .contact-b textarea.error {
+  border-bottom: 2px solid red;
+}
+
+.contact-container .contact-b textarea:focus {
+  border-bottom: 2px solid var(--green-1);
+}
+
+.contact-container .contact-b textarea.valid {
+  border-bottom: 2px solid var(--green-1);
+  background-color: transparent;
 }
 
 .contact-container button {
@@ -392,9 +414,22 @@ img {
   outline: none;
   border: none;
   border-bottom: 2px solid var(--green-1);
-  position: absolute;
-  bottom: -30px;
-  right: 20px;
+  float: right;
+}
+
+.contact-container button:hover {
+  cursor: pointer;
+  color: var(--green-1);
+}
+
+.error-message {
+  display: block;
+  color: red;
+  font-size: 1.3rem;
+  text-align: right;
+  height: 50px;
+  padding: 0.3rem;
+  margin: 0;
 }
 
 .contact-container .separator {
