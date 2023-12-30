@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link
+      id="light-theme"
+      rel="stylesheet"
+      type="text/css"
+      href="./css/light-theme.css"
+    />
+
+    <link
+      id="dark-theme"
+      rel="stylesheet"
+      type="text/css"
+      href="./css/dark-theme.css"
+    />
+
+    <title>Frontend Mentor | Dictionary web app</title>
+  </head>
+  <body>
+    <main>
+      <!-- Settings bar -->
+      <section>
+        <div class="container">
+          <div class="settings-bar">
+            <img src="./assets/images/logo.svg" alt="" class="logo" />
+
+            <div class="settings-b">
+              <!-- Dropdown -->
+              <div>
+                <select id="font-selection-dropdown">
+                  <option value="Sans serif">Sans serif</option>
+                  <option value="Serif">Serif</option>
+                  <option value="Mono">Mono</option>
+                </select>
+              </div>
+
+              <!-- Separator -->
+              <div class="vertical-separator"></div>
+
+              <!-- Switch -->
+              <div class="switch">
+                <label>
+                  <input type="checkbox" id="theme-icon" />
+                  <span class="lever"></span>
+
+                  <!-- Moon icon -->
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      class="icon-moon"
+                    >
+                      <path
+                        fill="none"
+                        stroke="#838383"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z"
+                      />
+                    </svg>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search box -->
+      <section>
+        <div class="container">
+          <div class="search-line">
+            <div>
+              <input
+                type="text"
+                placeholder="Enter word to search"
+                class="dict-input-word"
+              />
+
+              <!-- Search Icon -->
+              <img
+                src="./assets/images/icon-search.svg"
+                alt=""
+                class="search-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section>
+        <div class="container">
+          <div id="spinner" style="display: none"></div>
+          <div id="data-container"></div>
+        </div>
+      </section>
+
+      <script src="./js/app.js"></script>
+    </main>
+  </body>
+</html>
