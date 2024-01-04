@@ -1,0 +1,393 @@
+:root {
+  --white: #ffffff;
+  --light-gray-violet: #dedddf;
+  --dark-gray-violet: #8e8593;
+  --very-dark-violet: #21092f;
+
+  --font-color: var(--very-dark-violet);
+  --page-background: var(--white);
+  --placeholder-color: var(--dark-gray-violet);
+  --input-border-color: var(--light-gray-violet);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.5;
+  color: var(--font-color);
+  background-color: var(--page-background);
+}
+
+.loader img {
+  width: 50px;
+  height: 50px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  height: 25px;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.bg-image {
+  position: relative;
+  width: 400px;
+}
+
+/* Card front */
+.card-front {
+  position: absolute;
+  top: 100px;
+  right: -200px;
+  z-index: 2;
+}
+
+/* Card back side */
+.card-back {
+  position: absolute;
+  top: 400px;
+  right: -300px;
+  z-index: 1;
+}
+
+/* Card front and back pages have same width */
+.card-front img,
+.card-back img {
+  width: 100%;
+}
+
+.card-front-content {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  z-index: 2;
+  color: var(--white);
+  width: 85%;
+}
+
+.card-front-content img {
+  width: 55px;
+}
+
+.card-front-content p {
+  padding-top: 45px;
+  padding-bottom: 20px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.card-front-content span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.card-front-content .xxx {
+  display: flex;
+  justify-content: space-between;
+}
+
+card-front-content img {
+  width: 250px;
+}
+
+.card-back-content {
+  position: absolute;
+  top: 42%;
+  right: 12%;
+  z-index: 2;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* Form */
+form {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--font-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  padding: 0 5px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-weight: 500;
+  color: var(--font-color);
+  background-color: var(--background);
+  transition: border-color 0.3s ease-in-out;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.expiry-date-cvv {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#card-expiry-month,
+#card-expiry-year {
+  width: 45%;
+  text-align: center;
+}
+
+#card-cvc {
+  width: 100%;
+}
+
+button {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.feedback {
+  width: 50%;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
+  margin-right: 100px;
+}
+
+.feedback h1 {
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.feedback p {
+  color: var(--dark-gray-violet);
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .bg-image {
+    position: relative;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .bg-image-mobile,
+  .bg-image-default {
+    width: 100%;
+    position: relative;
+  }
+
+  .card-front {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    right: 15vw;
+    z-index: 2;
+  }
+
+  .card-back {
+    position: absolute;
+    width: 80%;
+    top: 6%;
+    right: 3vw;
+    z-index: 1;
+  }
+
+  /* Card front and back pages have same width */
+  .card-front img,
+  .card-back img {
+    width: 100%;
+  }
+
+  .card-front-content {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    z-index: 2;
+    color: var(--white);
+    width: 85%;
+  }
+
+  .card-front-content img {
+    width: 55px;
+  }
+
+  .card-front-content p {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .card-front-content span {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .card-front-content .xxx {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-back-content {
+    position: absolute;
+    top: 41%;
+    right: 12%;
+    z-index: 2;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .expiry-date-cvv {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #card-expiry-month,
+  #card-expiry-year {
+    width: 45%;
+    text-align: center;
+  }
+
+  #card-cvc {
+    width: 100%;
+  }
+
+  .feedback {
+    margin-top: 100px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .feedback > * {
+    margin-bottom: 10px;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* ------------------------ */
+/* Tablets */
+/* ------------------------ */
+@media (min-width: 576px) and (max-width: 1245px) {
+  .card-container {
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .bg-image {
+    position: relative;
+    width: 576px;
+    padding-right: 0;
+  }
+
+  .bg-image-default {
+    position: relative;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .card-front {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    right: 10vw;
+    z-index: 2;
+  }
+
+  .card-back {
+    position: absolute;
+    width: 80%;
+    top: 6%;
+    right: 3vw;
+    z-index: 1;
+  }
+
+  .card-form {
+    margin-top: 70px;
+  }
+
+  .feedback {
+    margin-top: 150px;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
