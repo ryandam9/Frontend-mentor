@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,600;0,800;1,600&display=swap");
+
+:root {
+  --primary-color: #f4d04e;
+  --card-bg-color: #ffffff;
+  --para-color-1: #808080;
+  --heading-color: #121212;
+  --text-color: #121212;
+  --shadow-color: #121212;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Images won't be selected */
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.cards {
+  padding: 1rem;
+}
+
+.cards ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog-preview-card {
+  max-width: 300px;
+  height: 450px;
+  background-color: var(--card-bg-color);
+  border-radius: 0.5rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem var(--shadow-color);
+  position: relative;
+}
+
+.blog-preview-card .illustration {
+  height: 250px;
+}
+
+.blog-preview-card a {
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.blog-preview-card h1 {
+  font-size: 2rem;
+}
+
+.blog-preview-card h1:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.blog-preview-card .tag {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.2rem 1rem;
+  border-radius: 0.3rem;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.blog-preview-card .published-date {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.blog-preview-card .desc {
+  color: var(--para-color-1);
+  font-size: 1.3rem;
+  height: 4rem;
+  overflow: hidden;
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .cards ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Extra small devices */
+@media (min-width: 481px) and (max-width: 767px) {
+  .cards ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .cards ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large tablets & laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cards ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
