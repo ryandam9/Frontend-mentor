@@ -121,6 +121,15 @@ p {
   .cards ul {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .blog-preview-card {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 /* Extra small devices */
