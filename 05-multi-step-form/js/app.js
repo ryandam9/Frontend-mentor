@@ -94,8 +94,14 @@ document.querySelectorAll(".prev-btn").forEach((button) => {
 
 // Show and hide sections
 function showAndHideSection(currentStep, nextStep) {
-  document.getElementById(`step-${currentStep}`).classList.add("hidden");
-  document.getElementById(`step-${nextStep}`).classList.remove("hidden");
+  console.log(currentStep, nextStep);
+
+  document
+    .getElementById(`step-${currentStep}-container`)
+    .classList.add("hidden");
+  document
+    .getElementById(`step-${nextStep}-container`)
+    .classList.remove("hidden");
 }
 
 // Highlight circle

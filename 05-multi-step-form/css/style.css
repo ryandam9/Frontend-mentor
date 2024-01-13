@@ -82,18 +82,18 @@ p {
 }
 
 .container {
-  width: 950px;
+  max-width: 950px;
+  height: 100%;
   border-radius: 1rem;
-  background-color: var(--container-bg-color);
   position: relative;
   display: flex;
+  background-color: var(--white);
 }
 
 .section-container {
   width: 100%;
   margin: 1rem;
   border-radius: 1rem;
-  border: 1px solid var(--light-gray);
 }
 
 .hidden {
@@ -103,6 +103,15 @@ p {
 .attribution {
   padding: 1rem 0;
   margin: 1rem 0;
+}
+
+#step-1-container,
+#step-2-container,
+#step-3-container,
+#step-4-container,
+#step-5-container {
+  height: 100%;
+  width: 600px;
 }
 
 /* ----------------------------------------------*/
@@ -238,6 +247,18 @@ p {
   text-align: end;
 }
 
+/* .button-holder {
+  position: absolute;
+  bottom: 2rem;
+  right: 6rem;
+  width: 80%;
+  height: 4rem;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
 .section-data button {
   padding: 1rem 2rem;
   border: none;
@@ -252,7 +273,7 @@ p {
 
 .section-data .prev-btn {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 6rem;
   width: 120px;
   font-size: 1.5rem;
@@ -269,8 +290,8 @@ p {
   background-color: var(--marine-blue);
   text-align: right;
   position: absolute;
-  bottom: 2rem;
-  right: 6rem;
+  bottom: 3rem;
+  right: 8rem;
   width: 120px;
 }
 

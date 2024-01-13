@@ -1,0 +1,133 @@
+main {
+  justify-content: flex-start;
+}
+
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: var(--form-background);
+}
+
+.section-container {
+  width: 100%;
+  border-radius: 0;
+}
+
+#step-1-container,
+#step-2-container,
+#step-3-container,
+#step-4-container,
+#step-5-container {
+  max-width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  background: url("../assets/images/bg-sidebar-mobile.svg") no-repeat center
+    center/cover;
+  height: 25%;
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Don't display step names */
+.sidebar .step-heading {
+  display: none;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  align-self: center;
+}
+
+/* Seciton data */
+/* All forms are shown here */
+.section-container {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 17%;
+  left: 20px;
+  background-color: var(--white);
+  border-radius: 1rem;
+  width: 90%;
+  max-height: 65%;
+}
+
+.section-data {
+  padding: 2rem 2rem;
+  position: relative;
+}
+
+.section-data .section-lead {
+  margin-bottom: 1rem;
+}
+
+.button-holder {
+  width: 100vw;
+  background-color: var(--white);
+  bottom: 0rem;
+  left: 0;
+  position: fixed;
+  height: 6rem;
+}
+
+.next-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 3rem;
+  border-radius: 0.6rem;
+  background-color: var(--marine-blue);
+  text-align: right;
+  width: 120px;
+}
+
+.attribution {
+  display: none;
+}
+
+/* ----------------------------------------------*/
+/* Step 2 */
+/* ----------------------------------------------*/
+#step-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#step-2 .plans ul {
+  display: flex;
+  flex-direction: column;
+}
+
+#step-2 .plans ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 7rem;
+  margin-bottom: 2rem;
+}
+
+#step-2 img {
+  width: 35px;
+  height: 35px;
+  margin-right: 1rem;
+}
+
+#step-2 .plan-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--magnolia);
+  border-radius: 0.8rem;
+  margin: 1rem 0;
+}

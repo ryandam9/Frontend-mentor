@@ -11,6 +11,13 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- For Mobiles -->
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 500px)"
+      href="css/mobile.css"
+    />
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
@@ -56,190 +63,209 @@
 
         <div class="section-container">
           <!-- Step 1 start -->
-          <section id="step-1" class="section-data">
-            <h1 class="section-heading">Personal info</h1>
-            <p class="section-lead">
-              Please provide your name, email address, and phone number.
-            </p>
+          <div id="step-1-container">
+            <section id="step-1" class="section-data">
+              <h1 class="section-heading">Personal info</h1>
+              <p class="section-lead">
+                Please provide your name, email address, and phone number.
+              </p>
 
-            <div>
-              <form action="">
-                <!-- Name -->
-                <div>
-                  <label for="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="e.g. Stephen King"
-                    class="form-field"
-                  />
+              <div>
+                <form action="">
+                  <!-- Name -->
+                  <div>
+                    <label for="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="e.g. Stephen King"
+                      class="form-field"
+                    />
 
-                  <p id="name-msg" class="error-msg"></p>
+                    <p id="name-msg" class="error-msg"></p>
+                  </div>
+
+                  <!-- Email address -->
+                  <div>
+                    <label for="email">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="e.g. stephenking@lorem.com"
+                      class="form-field"
+                    />
+                    <p id="email-msg" class="error-msg"></p>
+                  </div>
+
+                  <!-- Phone number -->
+                  <div>
+                    <label for="phone-number">Phone Number</label>
+                    <input
+                      type="phone"
+                      id="phone-number"
+                      name="phone-number"
+                      placeholder="e.g. +1 234 567 890"
+                      class="form-field"
+                    />
+                    <p id="phone-number-msg" class="error-msg"></p>
+                  </div>
+                </form>
+
+                <div class="button-holder">
+                  <button current-step="1" class="next-btn">Next Step</button>
                 </div>
-
-                <!-- Email address -->
-                <div>
-                  <label for="email">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="e.g. stephenking@lorem.com"
-                    class="form-field"
-                  />
-                  <p id="email-msg" class="error-msg"></p>
-                </div>
-
-                <!-- Phone number -->
-                <div>
-                  <label for="phone-number">Phone Number</label>
-                  <input
-                    type="phone"
-                    id="phone-number"
-                    name="phone-number"
-                    placeholder="e.g. +1 234 567 890"
-                    class="form-field"
-                  />
-                  <p id="phone-number-msg" class="error-msg"></p>
-                </div>
-              </form>
-
-              <button current-step="1" class="next-btn">Next Step</button>
-            </div>
-          </section>
+              </div>
+            </section>
+          </div>
           <!-- Step 1 end -->
 
           <!-- Step 2 start -->
-          <section id="step-2" class="hidden section-data">
-            <h1 class="section-heading">Select your plan</h1>
-            <p class="section-lead">
-              You have the option of monthly or yearly billing.
-            </p>
+          <div id="step-2-container" class="hidden">
+            <section id="step-2" class="section-data">
+              <h1 class="section-heading">Select your plan</h1>
+              <p class="section-lead">
+                You have the option of monthly or yearly billing.
+              </p>
 
-            <div class="plans">
-              <ul>
-                <!-- Plan #1 -->
-                <li class="selected" plan-value="arcade">
-                  <div>
-                    <img src="./assets/images/icon-arcade.svg" alt="" />
-                  </div>
-                  <div class="Arcade-plan">
-                    <p class="plan">Arcade</p>
-                    <p id="arcade-price" class="price">$9/mo</p>
-                    <p id="arcade-freebie" class="freebie"></p>
-                  </div>
-                </li>
+              <div class="plans">
+                <ul>
+                  <!-- Plan #1 -->
+                  <li class="selected" plan-value="arcade">
+                    <div>
+                      <img src="./assets/images/icon-arcade.svg" alt="" />
+                    </div>
+                    <div class="Arcade-plan">
+                      <p class="plan">Arcade</p>
+                      <p id="arcade-price" class="price">$9/mo</p>
+                      <p id="arcade-freebie" class="freebie"></p>
+                    </div>
+                  </li>
 
-                <!-- Plan #2 -->
-                <li plan-value="advanced">
-                  <div>
-                    <img src="./assets/images/icon-advanced.svg" alt="" />
-                  </div>
+                  <!-- Plan #2 -->
+                  <li plan-value="advanced">
+                    <div>
+                      <img src="./assets/images/icon-advanced.svg" alt="" />
+                    </div>
 
-                  <div class="Advanced-plan plan">
-                    <p class="plan">Advanced</p>
-                    <p id="advanced-price" class="price">$12/mo</p>
-                    <p id="advanced-freebie" class="freebie"></p>
-                  </div>
-                </li>
+                    <div class="Advanced-plan plan">
+                      <p class="plan">Advanced</p>
+                      <p id="advanced-price" class="price">$12/mo</p>
+                      <p id="advanced-freebie" class="freebie"></p>
+                    </div>
+                  </li>
 
-                <!-- Plan #3 -->
-                <li plan-value="pro">
-                  <div>
-                    <img src="./assets/images/icon-pro.svg" alt="" />
-                  </div>
+                  <!-- Plan #3 -->
+                  <li plan-value="pro">
+                    <div>
+                      <img src="./assets/images/icon-pro.svg" alt="" />
+                    </div>
 
-                  <div class="Pro-plan plan">
-                    <p class="plan">Pro</p>
-                    <p id="pro-price" class="price">$15/mo</p>
-                    <p id="pro-freebie" class="freebie"></p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <div class="plan-type">
-              <p class="plan-type-monthly">Monthly</p>
-
-              <!-- Switch -->
-              <div class="switch">
-                <label>
-                  <input type="checkbox" id="plan-checkbox" />
-                  <span class="lever"></span>
-                </label>
+                    <div class="Pro-plan plan">
+                      <p class="plan">Pro</p>
+                      <p id="pro-price" class="price">$15/mo</p>
+                      <p id="pro-freebie" class="freebie"></p>
+                    </div>
+                  </li>
+                </ul>
               </div>
 
-              <p class="plan-type-yearly unselected">Yearly</p>
-            </div>
+              <div class="plan-type">
+                <p class="plan-type-monthly">Monthly</p>
 
-            <a href="" current-step="2" class="prev-btn">Go Back</a>
-            <button current-step="2" class="next-btn">Next Step</button>
-          </section>
+                <!-- Switch -->
+                <div class="switch">
+                  <label>
+                    <input type="checkbox" id="plan-checkbox" />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+
+                <p class="plan-type-yearly unselected">Yearly</p>
+              </div>
+
+              <div class="button-holder">
+                <a href="" current-step="2" class="prev-btn">Go Back</a>
+                <button current-step="2" class="next-btn">Next Step</button>
+              </div>
+            </section>
+          </div>
           <!-- Step 2 end -->
 
           <!-- Step 3 start -->
-          <section id="step-3" class="hidden section-data">
-            <h1 class="section-heading">Pick add-ons</h1>
-            <p class="section-lead">
-              Add-ons help enhance your gaming experience.
-            </p>
+          <div id="step-3-container" class="hidden">
+            <section id="step-3" class="section-data">
+              <h1 class="section-heading">Pick add-ons</h1>
+              <p class="section-lead">
+                Add-ons help enhance your gaming experience.
+              </p>
 
-            <div>
-              <!-- This will be added by JS -->
-              <ul class="addon-items-list"></ul>
-            </div>
+              <div>
+                <!-- This will be added by JS -->
+                <ul class="addon-items-list"></ul>
+              </div>
 
-            <a href="" current-step="3" class="prev-btn">Go Back</a>
-            <button current-step="3" class="next-btn">Next Step</button>
-          </section>
+              <div class="button-holder">
+                <a href="" current-step="3" class="prev-btn">Go Back</a>
+                <button current-step="3" class="next-btn">Next Step</button>
+              </div>
+            </section>
+          </div>
+
           <!-- Step 3 end -->
 
           <!-- Step 4: Summary start -->
-          <section id="step-4" class="hidden section-data">
-            <h1 class="section-heading">Finishing up</h1>
-            <p class="section-lead">
-              Double-check everything looks OK before confirming.
-            </p>
+          <div id="step-4-container" class="hidden">
+            <section id="step-4" class="section-data">
+              <h1 class="section-heading">Finishing up</h1>
+              <p class="section-lead">
+                Double-check everything looks OK before confirming.
+              </p>
 
-            <div class="summary">
-              <!-- Base price -->
-              <div class="summary-base-price-wrapper">
-                <div>
-                  <p class="summary-plan"></p>
-                  <a href="#step-2" id="summary-change-link">Change</a>
+              <div class="summary">
+                <!-- Base price -->
+                <div class="summary-base-price-wrapper">
+                  <div>
+                    <p class="summary-plan"></p>
+                    <a href="#step-2" id="summary-change-link">Change</a>
+                  </div>
+                  <div class="summary-base-price"></div>
                 </div>
-                <div class="summary-base-price"></div>
+
+                <div class="separator"></div>
+
+                <!-- Add ons -->
+                <div class="addon-items"></div>
               </div>
 
-              <div class="separator"></div>
+              <div class="total-price">
+                <p class="total-price-msg"></p>
+                <p class="total-price-amt"></p>
+              </div>
 
-              <!-- Add ons -->
-              <div class="addon-items"></div>
-            </div>
-
-            <div class="total-price">
-              <p class="total-price-msg"></p>
-              <p class="total-price-amt"></p>
-            </div>
-
-            <a href="" current-step="4" class="prev-btn">Go Back</a>
-            <button current-step="4" class="next-btn">Confirm</button>
-          </section>
+              <div class="button-holder">
+                <a href="" current-step="4" class="prev-btn">Go Back</a>
+                <button current-step="4" class="next-btn">Confirm</button>
+              </div>
+            </section>
+          </div>
           <!-- Step 4 end -->
 
           <!-- Step 5 start -->
-          <section id="step-5" class="hidden section-data">
-            <div class="feedback">
-              <img src="./assets/images/icon-thank-you.svg" alt="" />
-              <h1 class="section-heading">Thank you!</h1>
-              <p class="section-lead">
-                Thanks for confirming your subscription! We hope you have fun
-                using our platform. If you ever need support, please feel free
-                to email us at support@loremgaming.com.
-              </p>
-            </div>
-          </section>
+          <div id="step-5-container" class="hidden">
+            <section id="step-5" class="section-data">
+              <div class="feedback">
+                <img src="./assets/images/icon-thank-you.svg" alt="" />
+                <h1 class="section-heading">Thank you!</h1>
+                <p class="section-lead">
+                  Thanks for confirming your subscription! We hope you have fun
+                  using our platform. If you ever need support, please feel free
+                  to email us at support@loremgaming.com.
+                </p>
+              </div>
+            </section>
+          </div>
 
           <!-- Step 5 end -->
 
