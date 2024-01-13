@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -13,30 +11,13 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
-
     <title>Frontend Mentor | Multi-step form</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main>
       <div class="container">
         <!-- Sidebar start -->
         <sidebar class="sidebar">
-          <!-- <img
-            src="./assets/images/bg-sidebar-desktop.svg"
-            alt=""
-            class="sidebar-image"
-          /> -->
           <ul>
             <li>
               <div class="step-number active">1</div>
@@ -93,6 +74,8 @@
                     placeholder="e.g. Stephen King"
                     class="form-field"
                   />
+
+                  <p id="name-msg" class="error-msg"></p>
                 </div>
 
                 <!-- Email address -->
@@ -105,6 +88,7 @@
                     placeholder="e.g. stephenking@lorem.com"
                     class="form-field"
                   />
+                  <p id="email-msg" class="error-msg"></p>
                 </div>
 
                 <!-- Phone number -->
@@ -117,12 +101,11 @@
                     placeholder="e.g. +1 234 567 890"
                     class="form-field"
                   />
+                  <p id="phone-number-msg" class="error-msg"></p>
                 </div>
               </form>
 
-              <div class="next-btn">
-                <button current-step="1" class="next-btn">Next Step</button>
-              </div>
+              <button current-step="1" class="next-btn">Next Step</button>
             </div>
           </section>
           <!-- Step 1 end -->
@@ -136,37 +119,40 @@
 
             <div class="plans">
               <ul>
-                <li>
+                <!-- Plan #1 -->
+                <li class="selected" plan-value="arcade">
                   <div>
                     <img src="./assets/images/icon-arcade.svg" alt="" />
                   </div>
                   <div class="Arcade-plan">
-                    <p>Arcade</p>
-                    <p id="arcade-price">$9/mo</p>
+                    <p class="plan">Arcade</p>
+                    <p id="arcade-price" class="price">$9/mo</p>
                     <p id="arcade-freebie" class="freebie"></p>
                   </div>
                 </li>
 
-                <li>
+                <!-- Plan #2 -->
+                <li plan-value="advanced">
                   <div>
                     <img src="./assets/images/icon-advanced.svg" alt="" />
                   </div>
 
-                  <div class="Advanced-plan">
-                    <p>Advanced</p>
-                    <p id="advanced-price">$12/mo</p>
+                  <div class="Advanced-plan plan">
+                    <p class="plan">Advanced</p>
+                    <p id="advanced-price" class="price">$12/mo</p>
                     <p id="advanced-freebie" class="freebie"></p>
                   </div>
                 </li>
 
-                <li>
+                <!-- Plan #3 -->
+                <li plan-value="pro">
                   <div>
                     <img src="./assets/images/icon-pro.svg" alt="" />
                   </div>
 
-                  <div class="Pro-plan">
-                    <p>Pro</p>
-                    <p id="pro-price">$15/mo</p>
+                  <div class="Pro-plan plan">
+                    <p class="plan">Pro</p>
+                    <p id="pro-price" class="price">$15/mo</p>
                     <p id="pro-freebie" class="freebie"></p>
                   </div>
                 </li>
@@ -174,7 +160,7 @@
             </div>
 
             <div class="plan-type">
-              <p>Monthly</p>
+              <p class="plan-type-monthly">Monthly</p>
 
               <!-- Switch -->
               <div class="switch">
@@ -184,7 +170,7 @@
                 </label>
               </div>
 
-              <p>Yearly</p>
+              <p class="plan-type-yearly unselected">Yearly</p>
             </div>
 
             <a href="" current-step="2" class="prev-btn">Go Back</a>
@@ -200,50 +186,8 @@
             </p>
 
             <div>
-              <ul>
-                <li>
-                  <div class="addon-item">
-                    <input type="checkbox" />
-
-                    <div>
-                      <p class="addon-item-type">Online service</p>
-                      <p class="addon-item-summary">
-                        Access to multiplayer games
-                      </p>
-                    </div>
-                  </div>
-
-                  <p>+$1/mo</p>
-                </li>
-
-                <li>
-                  <div class="addon-item">
-                    <input type="checkbox" />
-
-                    <div>
-                      <p class="addon-item-type">Larger storage</p>
-                      <p class="addon-item-summary">Extra 1TB of cloud save</p>
-                    </div>
-                  </div>
-
-                  <p>+$2/mo</p>
-                </li>
-
-                <li>
-                  <div class="addon-item">
-                    <input type="checkbox" />
-
-                    <div>
-                      <p class="addon-item-type">Customizable Profile</p>
-                      <p class="addon-item-summary">
-                        Custom theme on your profile
-                      </p>
-                    </div>
-                  </div>
-
-                  <p>+$2/mo</p>
-                </li>
-              </ul>
+              <!-- This will be added by JS -->
+              <ul class="addon-items-list"></ul>
             </div>
 
             <a href="" current-step="3" class="prev-btn">Go Back</a>
@@ -251,44 +195,36 @@
           </section>
           <!-- Step 3 end -->
 
-          <!-- Step 4 start -->
+          <!-- Step 4: Summary start -->
           <section id="step-4" class="hidden section-data">
             <h1 class="section-heading">Finishing up</h1>
             <p class="section-lead">
               Double-check everything looks OK before confirming.
             </p>
 
-            <div class="final-price">
+            <div class="summary">
               <!-- Base price -->
-              <div class="base-price">
+              <div class="summary-base-price-wrapper">
                 <div>
-                  <p>Archade (Yearly)</p>
-                  <a href="#">Change</a>
+                  <p class="summary-plan"></p>
+                  <a href="#step-2" id="summary-change-link">Change</a>
                 </div>
-                <div>$90/yr</div>
+                <div class="summary-base-price"></div>
               </div>
 
               <div class="separator"></div>
 
               <!-- Add ons -->
-              <div class="add-on-item">
-                <p>Online service</p>
-                <p>$12/yr</p>
-              </div>
-
-              <div class="add-on-item">
-                <p>Local storage</p>
-                <p>$20/yr</p>
-              </div>
+              <div class="addon-items"></div>
             </div>
 
             <div class="total-price">
-              <p>Total (per year)</p>
-              <p>$120/yr</p>
+              <p class="total-price-msg"></p>
+              <p class="total-price-amt"></p>
             </div>
 
             <a href="" current-step="4" class="prev-btn">Go Back</a>
-            <button current-step="4" class="next-btn">Next Step</button>
+            <button current-step="4" class="next-btn">Confirm</button>
           </section>
           <!-- Step 4 end -->
 
@@ -313,7 +249,7 @@
               href="https://www.frontendmentor.io?ref=challenge"
               target="_blank"
               >Frontend Mentor</a
-            >. Coded by <a href="#">Your Name Here</a>.
+            >. Coded by <a href="https://ryandam.net" target="_blank">RAVI</a>.
           </div>
         </div>
       </div>
