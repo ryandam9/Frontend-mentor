@@ -1,0 +1,321 @@
+:root {
+  /* Primary colors */
+  --soft-orange: #e9ab53;
+  --soft-red: #f15e50;
+  --off-white: #fffdfa;
+  --grayish-blue: #c5c6ce;
+  --dark-grayish-blue: #5d5f79;
+  --very-dark-blue: #00001a;
+  --font-color: var(--dark-grayish-blue);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  color: var(--font-color);
+  background-color: var(--grayish-blue);
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  padding-top: 10rem;
+  padding-left: 14rem;
+  padding-right: 14rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  background-color: var(--off-white);
+}
+
+/* Grid area */
+.news-grid {
+  display: grid;
+  grid-template-areas:
+    "main-image-container main-image-container main-image-container main-image-container sidebar"
+    "main-heading  main-heading main-article main-article sidebar"
+    "bottom-section-1 bottom-section-1 bottom-section-2 bottom-section-2 bottom-section-3";
+  gap: 1.2rem;
+  margin: 1.6rem 0;
+  padding-bottom: 6rem;
+}
+
+.main-image-container {
+  grid-area: main-image-container;
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main-heading {
+  grid-area: main-heading;
+}
+
+.bottom-section-1 {
+  grid-area: bottom-section-1;
+}
+
+.bottom-section-2 {
+  grid-area: bottom-section-2;
+}
+
+.bottom-section-3 {
+  grid-area: bottom-section-3;
+}
+
+.main-article {
+  grid-area: main-article;
+}
+
+/* Nav bar */
+#mobile-nav {
+  display: none;
+}
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  margin-bottom: 6rem;
+}
+
+#main-nav ul {
+  display: flex;
+}
+
+#main-nav li {
+  padding: 1rem 2.5rem;
+}
+
+/* Don't use padding for last nav bar element */
+#main-nav li:last-child {
+  padding-right: 0;
+}
+
+#main-nav a {
+  text-decoration: none;
+  color: var(--font-color);
+  text-transform: capitalize;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 0.5rem;
+  transition: border-color 0.3s;
+}
+
+#main-nav a:hover {
+  border-color: var(--dark-grayish-blue);
+}
+
+#main-nav a.current {
+  border-color: var(--soft-orange);
+}
+
+.main-heading h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--very-dark-blue);
+  padding-right: 8rem;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.main-article {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+  color: var(--font-color);
+  margin-bottom: 1.5rem;
+}
+
+.main-article button {
+  margin-top: 3.5rem;
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  border: none;
+  outline: none;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sidebar */
+.sidebar {
+  padding: 1.5rem;
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+}
+
+.sidebar ul {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h1 {
+  color: var(--soft-orange);
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar li h2 {
+  color: var(--off-white);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar li p {
+  color: var(--grayish-blue);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar li .separator {
+  height: 1px;
+  background-color: var(--grayish-blue);
+  margin: 2.5rem 0;
+}
+
+/* Bottom section */
+.bottom-section img {
+  height: 120px;
+  width: 80px;
+  margin-right: 2rem;
+  float: left;
+}
+
+.bottom-section li .sequence {
+  font-size: 3.4rem;
+}
+
+.bottom-section li .lead {
+  font-size: 1.5rem;
+  color: var(--very-dark-blue);
+  font-weight: bold;
+}
+
+.bottom-section li .desc {
+  font-size: 1.6rem;
+  color: var(--font-color);
+  margin-bottom: 1.4rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  #main-nav {
+    display: none;
+  }
+
+  #mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 2rem 0;
+  }
+
+  #mobile-nav img {
+    max-width: 80px;
+    height: auto;
+  }
+
+  #mobile-nav img.menu-icon {
+    cursor: pointer;
+    width: 30px;
+  }
+
+  #mobile-menu-wrapper {
+    display: none;
+  }
+
+  #mobile-menu-wrapper.show {
+    display: flex;
+    background-color: red;
+  }
+
+  #mobile-nav ul {
+    display: flex;
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: var(--off-white);
+    z-index: 1;
+  }
+
+  #mobile-nav ul li {
+    padding: 1rem;
+    text-align: right;
+    width: 100%;
+  }
+
+  #mobile-nav ul li a {
+    color: var(--font-color);
+    text-decoration: none;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-areas:
+      "main-image-container"
+      "main-heading"
+      "main-article"
+      "sidebar"
+      "bottom-section-1"
+      "bottom-section-2"
+      "bottom-section-3";
+    gap: 1.2rem;
+    margin: 1.6rem 0;
+    padding-bottom: 6rem;
+  }
+
+  .main-heading h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--very-dark-blue);
+    padding-right: 8rem;
+    letter-spacing: -2px;
+    margin: 0;
+  }
+}
